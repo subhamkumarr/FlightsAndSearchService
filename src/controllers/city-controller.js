@@ -8,86 +8,80 @@ const create = async (req, res) => {
         return res.status(201).json({
             data: city,
             success: true,
-            message: "Successsfully created a city",
+            message: 'Successfully created a city',
             err: {}
         });
-
     } catch (error) {
         console.log(error);
         return res.status(500).json({
             data: {},
             success: false,
-            message: "Not able to create a city",
+            message: 'Not able to create a city',
             err: error
-        })
+        });
     }
-
 }
-//DELETE -> /city/:id
+// DELETE. -> /city/:id
 const destroy = async (req, res) => {
     try {
         const response = await cityService.deleteCity(req.params.id);
         return res.status(200).json({
             data: response,
             success: true,
-            message: "Successsfully deleted the city",
+            message: 'Successfully deleted a city',
             err: {}
         });
-
     } catch (error) {
         console.log(error);
         return res.status(500).json({
             data: {},
             success: false,
-            message: "Not able to delete the city",
+            message: 'Not able to delete the city',
             err: error
-        })
+        });
     }
-    
 }
-//GET -> /city/:id
+
+// GET -> /city/:id
 const get = async (req, res) => {
     try {
         const response = await cityService.getCity(req.params.id);
         return res.status(200).json({
             data: response,
             success: true,
-            message: "Successsfully fetched a city",
+            message: 'Successfully fetched a city',
             err: {}
         });
-
     } catch (error) {
         console.log(error);
         return res.status(500).json({
             data: {},
             success: false,
-            message: "Not able to fetched the city",
+            message: 'Not able to get the city',
             err: error
-        })
+        });
     }
-    
 }
-//patch -> /city/:id -> req.body
+
+// Patch -> /city/:id -> req.body
 const update = async (req, res) => {
     try {
         const response = await cityService.updateCity(req.params.id, req.body);
         return res.status(200).json({
             data: response,
             success: true,
-            message: "Successsfully fetched a city",
+            message: 'Successfully fetched a city',
             err: {}
         });
-
     } catch (error) {
         console.log(error);
         return res.status(500).json({
             data: {},
             success: false,
-            message: "Not able to update the city",
+            message: 'Not able to update the city',
             err: error
-        })
+        });
     }
-    
 }
 
 module.exports = {
