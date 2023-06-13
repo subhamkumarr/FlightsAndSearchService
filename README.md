@@ -1,5 +1,4 @@
 /
-
    ## FlightSearch DB Design
      - Airplane table
      - Flight Table
